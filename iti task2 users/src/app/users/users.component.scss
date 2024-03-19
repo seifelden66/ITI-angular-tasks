@@ -1,0 +1,37 @@
+.cont {
+    input {
+      margin: 1em 0;
+      height: 30px;
+      border-radius: 5px;
+      padding: 2px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2em;
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 442px) {
+        grid-template-columns: 1fr;
+      }
+      .card {
+        padding: 1em;
+        img {
+          height: 200px;
+          border-bottom: 1px black solid;
+        }
+        h1 {
+          text-align: center;
+        }
+      }
+      .verified {
+        border: 1px solid rgb(0, 255, 76);
+      }
+      .not-ve {
+          border: 1px solid rgb(255, 51, 0);
+        }
+        
+    }
+  }
+  

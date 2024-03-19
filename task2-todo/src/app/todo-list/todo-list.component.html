@@ -1,0 +1,13 @@
+@if (todoList.length>0) {
+    <div >
+        @for (item of todoList; track $index) {
+            <div class="todo">
+                <p>{{item}}</p>
+            <button (click)="deleteTodo($index)">delete</button>
+            </div>
+        }
+    </div>
+}
+@else{
+    <p>no items </p>
+}

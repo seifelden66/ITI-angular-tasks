@@ -1,0 +1,26 @@
+<div class="cont">
+    <input type="text" placeholder="search" (input)="searchByEmail($event)"/>
+    @if (showButton) {
+      <button (click)="clear()">reset</button>
+    }
+    @else {
+      <h1></h1>
+    }
+    <div class="cards">
+      @for (item of filteredData; track $index) {
+      <div class="card" [ngClass]="item.is_verified?'verified':'not-ve'">
+        <img [src]="item.image" alt="" />
+        @if (item.is_verified) {
+          <fa-icon [icon]="faCoffee"></fa-icon>
+        }
+        
+        <h1>{{ item.username }}</h1>
+        <!-- <p>{{ item.age }}</p>
+        <p>{{ item.birthday }}</p> -->
+        <p>{{ item.email }}</p>
+        <p>{{ item.phone }}</p>
+      </div>
+      }
+    </div>
+  </div>
+  
