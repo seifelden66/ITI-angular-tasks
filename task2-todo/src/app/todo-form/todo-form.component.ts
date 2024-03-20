@@ -17,7 +17,6 @@ export class TodoFormComponent {
     this.arr.push(this.todo)  
     this.todo="" 
     this.todoAdded.emit(this.arr);
-
   }
   reset(){
     this.todo = ""

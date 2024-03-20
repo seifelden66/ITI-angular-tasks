@@ -1,0 +1,8 @@
+.cont{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) ;
+    gap: 20px;
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 2em;
+}
