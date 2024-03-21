@@ -23,6 +23,9 @@ export class SignupComponent {
   profileForm = this.formBuilder.group({
     email: ['', [Validators.required,Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]],
     password: ['', Validators.required],
+    fName:['', [Validators.minLength(11), Validators.required]],
+    lName:['', [Validators.minLength(11), Validators.required]]
+
   });
   onSubmit() {
     if (this.profileForm.valid) {

@@ -1,4 +1,4 @@
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="example-form">
+<!-- <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Email</mat-label>
     <input
@@ -28,6 +28,51 @@
     @if(profileForm.get('password')?.errors?.['required']) {
     <mat-error>Email is <strong>required</strong></mat-error>
     } }
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">submit</button>
+
+</form> -->
+<form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="example-form">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input
+    type="email"
+    placeholder="Ex. pat@example.com"
+    matInput
+    required
+    minlength="10"
+    ngModel
+    name="email"
+    #email="ngModel"
+    required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+  />
+    @if(email.touched&&email.invalid){
+      @if(email.errors?.['required']){
+        <mat-error>Email is <strong>required</strong></mat-error>
+      }
+      @if(email.errors?.['pattern']){
+        <mat-error>Email is <strong>invalid</strong></mat-error>
+      }
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>password</mat-label>
+    <input
+    type="password"
+    placeholder="password"
+    matInput
+    required
+    minlength="10"
+    ngModel
+    name="password"
+    #password="ngModel"
+  />
+    @if(password.touched&&password.invalid){
+      @if(password.errors?.['required']){
+        <mat-error>password is <strong>required</strong></mat-error>
+      }
+    }
   </mat-form-field>
   <button type="submit" mat-raised-button color="primary">submit</button>
 

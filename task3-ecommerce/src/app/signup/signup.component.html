@@ -29,6 +29,39 @@
       <mat-error>Email is <strong>required</strong></mat-error>
       } }
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>first name</mat-label>
+      <input
+        id="fNAme"
+        placeholder="fNAme"
+        matInput
+        type="fNAme"
+        formControlName="fNAme"
+      />
+      @if(profileForm.get('fNAme')?.invalid &&
+      profileForm.get('fNAme')?.touched) {
+      @if(profileForm.get('fNAme')?.errors?.['required']) {
+      <mat-error>fNAme is <strong>required</strong></mat-error>
+      } }
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>last name</mat-label>
+      <input
+        id="lNAme"
+        placeholder="last name"
+        matInput
+        type="lNAme"
+        formControlName="lName"
+      />
+      @if(profileForm.get('lName')?.invalid &&
+      profileForm.get('lName')?.touched) {
+      @if(profileForm.get('lName')?.errors?.['required']) {
+      <mat-error>fNAme is <strong>required</strong></mat-error>
+      } }
+    </mat-form-field>
+  
+    
     <button type="submit" mat-raised-button color="primary">submit</button>
   
   </form>

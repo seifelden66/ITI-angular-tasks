@@ -8,6 +8,17 @@
     </div>
     <p>{{ item.description }}</p>
   </mat-card-content>
+  @if (item.stock > 0) {
+    <div class="in-stock">
+      in stock
+    </div>
+  }
+  @if (item.stock == 0) {
+<div class="out">
+  out of stock
+
+</div>
+  }
   <mat-card-actions>
     <button mat-button>Add To Card</button>
   </mat-card-actions>

@@ -5,7 +5,9 @@ import {
   Validators,
   ReactiveFormsModule,
   FormBuilder,
+  FormsModule
 } from '@angular/forms';
+
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
@@ -15,7 +17,7 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
-  imports: [ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule],
+  imports: [ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule],
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
