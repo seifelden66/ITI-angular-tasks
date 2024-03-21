@@ -1,0 +1,15 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    display: grid;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  

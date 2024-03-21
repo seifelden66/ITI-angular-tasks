@@ -2,12 +2,14 @@
 <mat-card class="example-card" [routerLink]="['product', item.id]">
   <img mat-card-image class="img" [src]="item.thumbnail" alt="Photo of a Shiba Inu" />
   <mat-card-content>
-    <mat-card-title>{{item.title}}</mat-card-title>
+    <div class="up">
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <p class="price">{{item.price}} $</p>
+    </div>
     <p>{{ item.description }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>Like</button>
-    <button mat-button>Add TO CARD </button>
+    <button mat-button>Add To Card</button>
   </mat-card-actions>
 </mat-card>
 }
