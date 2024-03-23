@@ -1,1 +1,8 @@
-<p>{{theId}}</p>
+<div class="cont">
+  <img [src]="details.thumbnail" alt="" />
+  <div class="rig">
+    <h1>{{ details.title }}</h1>
+    <h1>{{ details.price }} $</h1>
+    <button (click)="addToCart(details.id)">Add to Cart</button>
+  </div>
+</div>

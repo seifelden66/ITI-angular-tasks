@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,4 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  constructor(private cart: CartService) {}
+  
+
 }

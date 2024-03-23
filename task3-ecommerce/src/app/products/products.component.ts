@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import users from '../../assets/products-list.json';
 import { CardComponent } from '../card/card.component';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { ProductsService } from '../products.service';
+import { CartService } from '../cart.service';
 
 
 @Component({
@@ -13,18 +14,26 @@ import {MatInputModule} from '@angular/material/input';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
-  data: any = users;
+  products: any ;
   filteredData: any = [];
   searchQuery: string = '';
 
-  constructor() {
-    this.filteredData = this.data;
+  constructor(private productsService:ProductsService, private cartService: CartService) {  }
+  ngOnInit(){
+   this.productsService.getProducts().subscribe((ss:any)=>{
+    console.log(ss.products);
+    this.products=ss.products
+    this.filteredData=ss.products
+   })
+  }
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
   }
   search(): void {
     if (this.searchQuery.trim() === '') {
-      this.filteredData = this.data;
+      this.filteredData = this.products;
     } else {
-      this.filteredData = this.data.filter((item: any) => {
+      this.filteredData = this.products.filter((item: any) => {
         return item.title.toLowerCase().includes(this.searchQuery.toLowerCase());
       });
     }

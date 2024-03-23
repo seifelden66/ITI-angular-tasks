@@ -1,9 +1,19 @@
-<div >
-   <div class="cont">   
-      <mat-form-field class="example-full-width">
-         <mat-label>search</mat-label>
-         <input type="text" matInput [(ngModel)]="searchQuery" (input)="search()" placeholder="iphone">
-       </mat-form-field></div>
-   <app-card class="cont" [dataa]="filteredData" ></app-card>
+<div>
+  <div class="cont">
+    <mat-form-field class="example-full-width">
+      <mat-label>search</mat-label>
+      <input
+        type="text"
+        matInput
+        [(ngModel)]="searchQuery"
+        (keyup)="search()"
+        placeholder="iphone"
+      />
+    </mat-form-field>
+  </div>
+  <div class="cont">
+    @for (item of filteredData; track $index) {
+    <app-card [dataa]="item"></app-card>
+    }
+  </div>
 </div>
-  

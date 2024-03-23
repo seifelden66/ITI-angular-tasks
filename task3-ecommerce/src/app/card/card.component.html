@@ -1,19 +1,19 @@
-@for (item of dataa; track $index) {
-<mat-card class="example-card" [routerLink]="['product', item.id]">
-  <img mat-card-image class="img" [src]="item.thumbnail" alt="Photo of a Shiba Inu" />
+
+<mat-card class="example-card" [routerLink]="['product', dataa.id]">
+  <img mat-card-image class="img" [src]="dataa.thumbnail" alt="Photo of a Shiba Inu" />
   <mat-card-content>
     <div class="up">
-      <mat-card-title>{{item.title}}</mat-card-title>
-      <p class="price">{{item.price}} $</p>
+      <mat-card-title>{{dataa.title}}</mat-card-title>
+      <p class="price">{{dataa.price}} $</p>
     </div>
-    <p>{{ item.description }}</p>
+    <p>{{ dataa.description }}</p>
   </mat-card-content>
-  @if (item.stock > 0) {
+  @if (dataa.stock > 0) {
     <div class="in-stock">
       in stock
     </div>
   }
-  @if (item.stock == 0) {
+  @if (dataa.stock == 0) {
 <div class="out">
   out of stock
 
@@ -23,4 +23,4 @@
     <button mat-button>Add To Card</button>
   </mat-card-actions>
 </mat-card>
-}
+
